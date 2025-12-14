@@ -67,13 +67,21 @@ function startGame() {
 }
 
 function endGame() {
+  startBtn.style.display = "none"; // ensure hidden
   resultEl.classList.remove("hidden");
 
   if (score >= 50) {
-    resultEl.innerHTML = `🎉 You Win! <br/> Coupon: <b>CAKE20</b>`;
+    resultEl.innerHTML = `
+      🎉 You Win! <br/>
+      Coupon Code: <b>CAKE20</b> 🍰
+    `;
   } else {
-    resultEl.innerHTML = `😄 Better Luck Next Time <br/> Coupon: <b>CAKE5</b>`;
+    resultEl.innerHTML = `
+      😄 Better Luck Next Time <br/>
+      Coupon Code: <b>CAKE5</b>
+    `;
   }
 }
+
 
 startBtn.addEventListener("click", startGame);
