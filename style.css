@@ -1,0 +1,49 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #fff3e0;
+}
+
+h2 {
+  margin: 10px;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.game-area {
+  width: 300px;
+  height: 400px;
+  margin: auto;
+  background: #ffe0b2;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 2px solid #d7a86e;
+}
+
+.cake {
+  position: absolute;
+  top: 0;
+  font-size: 30px;
+}
+
+.basket {
+  position: absolute;
+  bottom: 10px;
+  left: 120px;
+  font-size: 40px;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.hidden {
+  display: none;
+}
