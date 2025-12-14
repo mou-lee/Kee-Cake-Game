@@ -7,28 +7,22 @@
 </head>
 <body>
 
-  <h2>🎂 Enter Details to Play</h2>
+<h2>🎂 Enter Details to Play</h2>
 
-  <form id="loginForm" class="login-form">
-    <input type="text" id="name" placeholder="Your Name" required />
-    <input type="tel" id="phone" placeholder="Phone Number" required />
-    <textarea id="address" placeholder="Address" required></textarea>
+<form
+  id="gForm"
+  action="https://docs.google.com/forms/d/e/1FAIpQLSf211Nihy9VgGkAyQv9dZl6neJmMH6RYjZyjZpRwZVZ6uU2Kw/formResponse"
+  method="POST"
+  target="hidden_iframe"
+>
+  <input id="name" type="text" name="entry.12345678" placeholder="Name" required />
+  <input id="phone" type="tel" name="entry.87654321" placeholder="Phone" required />
+  <textarea id="address" name="entry.11223344" placeholder="Address" required></textarea>
 
-    <button type="submit">Continue to Game 🎮</button>
-  </form>
+  <button type="submit">Continue to Game 🎮</button>
+</form>
 
-  <script>
-    document.getElementById("loginForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      // (Optional) Save data in localStorage
-      localStorage.setItem("playerName", name.value);
-      localStorage.setItem("playerPhone", phone.value);
-      localStorage.setItem("playerAddress", address.value);
-
-      window.location.href = "game.html";
-    });
-  </script>
+<iframe name="hidden_iframe" style="display:none;"></iframe>
 
 </body>
 </html>
