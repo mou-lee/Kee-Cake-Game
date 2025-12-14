@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <title>Play & Win 🍰</title>
   <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -15,14 +16,26 @@
   method="POST"
   target="hidden_iframe"
 >
-  <input id="name" type="text" name="entry.12345678" placeholder="Name" required />
-  <input id="phone" type="tel" name="entry.87654321" placeholder="Phone" required />
-  <textarea id="address" name="entry.11223344" placeholder="Address" required></textarea>
+<input type="text" name="entry.NAME_ID" placeholder="Name" required>
+<input type="tel" name="entry.PHONE_ID" placeholder="Phone" required>
+<textarea name="entry.ADDRESS_ID" placeholder="Address" required></textarea>
+
 
   <button type="submit">Continue to Game 🎮</button>
 </form>
 
-<iframe name="hidden_iframe" style="display:none;"></iframe>
+<iframe name="hidden_iframe" style="display:none"></iframe>
+
+<script>
+const form = document.getElementById('gForm');
+form.addEventListener('submit', () => {
+  setTimeout(() => {
+    window.location.href = "game.html";
+  }, 1500);
+});
+</script>
+
+
 
 </body>
 </html>
