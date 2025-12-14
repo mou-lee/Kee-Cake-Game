@@ -2,23 +2,33 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Catch the Cake 🍰</title>
+  <title>Play & Win 🍰</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <h2>🎂 Catch the Cake</h2>
-  <div class="info">
-    <span>⏱ Time: <span id="time">30</span>s</span>
-    <span>⭐ Score: <span id="score">0</span></span>
-  </div>
+  <h2>🎂 Enter Details to Play</h2>
 
-  <div class="game-area" id="gameArea">
-    <div class="basket" id="basket">🧺</div>
-  </div>
+  <form id="loginForm" class="login-form">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="tel" id="phone" placeholder="Phone Number" required />
+    <textarea id="address" placeholder="Address" required></textarea>
 
-  <div id="result" class="result hidden"></div>
+    <button type="submit">Continue to Game 🎮</button>
+  </form>
 
-  <script src="script.js"></script>
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      // (Optional) Save data in localStorage
+      localStorage.setItem("playerName", name.value);
+      localStorage.setItem("playerPhone", phone.value);
+      localStorage.setItem("playerAddress", address.value);
+
+      window.location.href = "game.html";
+    });
+  </script>
+
 </body>
 </html>

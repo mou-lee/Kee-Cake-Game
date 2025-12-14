@@ -3,10 +3,13 @@ const basket = document.getElementById("basket");
 const scoreEl = document.getElementById("score");
 const timeEl = document.getElementById("time");
 const resultEl = document.getElementById("result");
+const startBtn = document.getElementById("startBtn");
 
 let score = 0;
 let timeLeft = 30;
 let basketX = 120;
+let cakeInterval;
+let timer;
 
 document.addEventListener("keydown", (e) => {
   if (e.key === "ArrowLeft" && basketX > 0) basketX -= 20;
@@ -26,7 +29,6 @@ function createCake() {
     cakeY += 5;
     cake.style.top = cakeY + "px";
 
-    // Catch logic
     if (
       cakeY > 330 &&
       parseInt(cake.style.left) > basketX - 20 &&
@@ -38,7 +40,6 @@ function createCake() {
       clearInterval(fall);
     }
 
-    // Missed
     if (cakeY > 400) {
       score -= 5;
       scoreEl.innerText = score;
@@ -48,31 +49,31 @@ function createCake() {
   }, 50);
 }
 
-const cakeInterval = setInterval(createCake, 1000);
+function startGame() {
+  startBtn.disabled = true;
 
-const timer = setInterval(() => {
-  timeLeft--;
-  timeEl.innerText = timeLeft;
+  cakeInterval = setInterval(createCake, 1000);
 
-  if (timeLeft === 0) {
-    clearInterval(timer);
-    clearInterval(cakeInterval);
-    endGame();
-  }
-}, 1000);
+  timer = setInterval(() => {
+    timeLeft--;
+    timeEl.innerText = timeLeft;
+
+    if (timeLeft === 0) {
+      clearInterval(timer);
+      clearInterval(cakeInterval);
+      endGame();
+    }
+  }, 1000);
+}
 
 function endGame() {
   resultEl.classList.remove("hidden");
 
   if (score >= 50) {
-    resultEl.innerHTML = `
-      🎉 You Win! <br/>
-      Coupon Code: <b>CAKE20</b> 🍰
-    `;
+    resultEl.innerHTML = `🎉 You Win! <br/> Coupon: <b>CAKE20</b>`;
   } else {
-    resultEl.innerHTML = `
-      😄 Better Luck Next Time <br/>
-      Coupon Code: <b>CAKE5</b>
-    `;
+    resultEl.innerHTML = `😄 Better Luck Next Time <br/> Coupon: <b>CAKE5</b>`;
   }
 }
+
+startBtn.addEventListener("click", startGame);
