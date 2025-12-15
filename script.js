@@ -10,8 +10,12 @@ let timeLeft = 30;
 let basketX = 120;
 let cakeInterval;
 let timer;
+let gameRunning = false;
+let gameFinished = localStorage.getItem("gameFinished") === "true";
+
 
 document.addEventListener("keydown", (e) => {
+  if (!gameRunning) return;
   if (e.key === "ArrowLeft" && basketX > 0) basketX -= 20;
   if (e.key === "ArrowRight" && basketX < 240) basketX += 20;
   basket.style.left = basketX + "px";
@@ -61,27 +65,35 @@ function startGame() {
     if (timeLeft === 0) {
       clearInterval(timer);
       clearInterval(cakeInterval);
+      gameRunning = false;
       endGame();
     }
   }, 1000);
 }
 
 function endGame() {
-  startBtn.style.display = "none"; // ensure hidden
+  startBtn.style.display = "none";
   resultEl.classList.remove("hidden");
 
-  if (score >= 50) {
-    resultEl.innerHTML = `
-      🎉 You Win! <br/>
-      Coupon Code: <b>CAKE20</b> 🍰
-    `;
+  let offerText = "";
+
+  if (score >= 300) {
+    offerText = "🎉 20% OFF";
+  } else if (score >= 200) {
+    offerText = "🔥 15% OFF";
+  } else if (score >= 100) {
+    offerText = "😎 10% OFF";
   } else {
-    resultEl.innerHTML = `
-      😄 Better Luck Next Time <br/>
-      Coupon Code: <b>CAKE5</b>
-    `;
+    offerText = "🙂 5% OFF";
   }
+
+  resultEl.innerHTML = `
+    🎂 Game Over! <br/>
+    Your Score: <b>${score}</b><br/><br/>
+    Coupon: <b>${offerText}</b>
+  `;
 }
+
 
 
 startBtn.addEventListener("click", startGame);

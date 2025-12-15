@@ -8,23 +8,27 @@
 </head>
 <body>
 
-<h2>🎂 Enter Details to Play</h2>
+  <div class="details-section">
+<h1>🎂 Enter Details to Play</h1>
 
 <form
   id="gForm"
   action="https://docs.google.com/forms/d/e/1FAIpQLSf211Nihy9VgGkAyQv9dZl6neJmMH6RYjZyjZpRwZVZ6uU2Kw/formResponse"
   method="POST"
   target="hidden_iframe"
+  class="details-form"
 >
-<input type="text" name="entry.NAME_ID" placeholder="Name" required>
-<input type="tel" name="entry.PHONE_ID" placeholder="Phone" required>
-<textarea name="entry.ADDRESS_ID" placeholder="Address" required></textarea>
+  <input type="text" name="entry.93397724" placeholder="Enter Your Name" class="form-name" required>
+  <input type="number" name="entry.50064227" placeholder="Enter Your Phone Number" class="form-phone" required>
+  <textarea name="entry.41984679" placeholder="Enter Your Address" class="form-address" required></textarea>
 
 
   <button type="submit">Continue to Game 🎮</button>
 </form>
 
 <iframe name="hidden_iframe" style="display:none"></iframe>
+
+</div>
 
 <script>
 const form = document.getElementById('gForm');

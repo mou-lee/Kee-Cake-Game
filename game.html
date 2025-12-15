@@ -6,13 +6,21 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <h2>🎂 Catch the Cake</h2>
+<section class="game-section">
+  <h1>🎂 Catch the Cake</h1>
 
   <div class="info">
     <span>⏱ Time: <span id="time">30</span>s</span>
     <span>⭐ Score: <span id="score">0</span></span>
   </div>
+
+  <div class="score-details">
+  <h3>🎁 Score Rewards</h3>
+    <p>⭐ 100 + <b>10% OFF</b></p>
+    <p>⭐ 200 + <b>15% OFF</b></p>
+    <p>⭐ 300 + <b>20% OFF</b></p>
+</div>
+
 
   <div class="game-area" id="gameArea">
     <div class="basket" id="basket">🧺</div>
@@ -22,6 +30,7 @@
   <button id="startBtn" class="start-btn">Start Game ▶️</button>
 
   <div id="result" class="result hidden"></div>
+  </section>
 
   <script src="script.js"></script>
 </body>
