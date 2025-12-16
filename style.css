@@ -6,9 +6,19 @@ body {
   padding: 0;
 }
 
-h2 {
-  margin: 10px;
+h1 {
+  font-size: 26px;
 }
+
+.info {
+  font-size: 16px;
+  margin: 15px 0;
+}
+
+.score-details {
+  font-size: 15px;
+}
+
 
 .login-form {
   display: flex;
@@ -42,15 +52,24 @@ h2 {
 }
 
 .game-area {
-  width: 300px;
-  height: 400px;
-  margin: 0;
+  width: 90vw;          /* responsive width */
+  max-width: 360px;     /* good size for mobiles */
+  height: 60vh;         /* taller on mobile */
+  max-height: 450px;
   background: #ffe0b2;
   position: relative;
   overflow: hidden;
-  border-radius: 12px;
+  border-radius: 14px;
   border: 2px solid #d7a86e;
 }
+.basket {
+  font-size: 48px;     /* bigger basket */
+}
+
+.cake {
+  font-size: 34px;     /* bigger cake */
+}
+
 
 .cake {
   position: absolute;
@@ -123,12 +142,14 @@ h2 {
 
 /* Game Section */
 .game-section {
+  min-height: 100vh;
+  margin: 0;
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
+
 .score-details {
   padding: 10px;
   background: #fff7e6;
@@ -145,13 +166,29 @@ h2 {
   margin: 0;
 }
 
-@media screen and (min-width: 500px) {
-  .info {
-    flex-direction: column;
-    gap: 30px;
-    margin: 15px 0px;
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  .game-area {
+    height: 65vh;
+  }
+
+  .basket {
+    font-size: 52px;
+  }
+
+  .cake {
+    font-size: 36px;
+  }
+
+  .start-btn {
+    font-size: 18px;
+    padding: 14px 22px;
   }
 }
+
 
 .game-area {
   position: relative;
