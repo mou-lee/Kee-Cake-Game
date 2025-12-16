@@ -152,3 +152,15 @@ h2 {
     margin: 15px 0px;
   }
 }
+
+.game-area {
+  position: relative;
+}
+
+.basket {
+  position: absolute;
+  bottom: 10px;
+  left: 120px;
+  cursor: grab;
+  touch-action: none;
+}
