@@ -201,3 +201,9 @@ body {
   cursor: grab;
   touch-action: none;
 }
+.bomb {
+  position: absolute;
+  top: 0;
+  font-size: 34px;
+}
+
