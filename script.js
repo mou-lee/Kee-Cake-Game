@@ -95,7 +95,7 @@ basket.addEventListener("touchmove", (e) => {
    CAKE LOGIC (ACCURATE HIT)
 ========================== */
 function createItem() {
-  const isBomb = Math.random() < 0.2; // 20% bomb chance
+  const isBomb = Math.random() < 0.3; // 30% bomb chance
   const item = document.createElement("div");
 
   item.classList.add(isBomb ? "bomb" : "cake");
