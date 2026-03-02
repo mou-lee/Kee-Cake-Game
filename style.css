@@ -142,7 +142,6 @@ body {
 /* Game Section */
 .game-section {
   padding: 100px 0px;
-  height: 100vh;
   margin: 0;
   display: flex;
   flex-direction: column;
